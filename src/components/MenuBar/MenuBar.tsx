@@ -21,7 +21,13 @@ export const MenuBar = () => {
           </Button>
         </Link>
         <Link to={'/'} style={{ color: 'inherit', textDecoration: 'none' }}>
-          <Button variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          <Button
+            variant="outlined"
+            sx={{ my: 1, mx: 1.5 }}
+            onClick={() => {
+              localStorage.removeItem('api');
+            }}
+          >
             Home
           </Button>
         </Link>
