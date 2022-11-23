@@ -1,4 +1,6 @@
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { apiUri } from '../../services/api';
+
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -6,56 +8,45 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
+import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
+
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-
-import { MenuBar } from '../../components/MenuBar/MenuBar';
-import { apiUri } from '../../services/api';
-
-import { redirect } from 'react-router-dom'
 
 const tiers = [
   {
     title: 'Ivan',
     buttonText: 'Acesse aqui',
     buttonVariant: 'contained',
-    link: 'list',
   },
   {
     title: 'Juan',
     buttonText: 'Acesse aqui',
     buttonVariant: 'contained',
-    link: 'list',
   },
   {
     title: 'Larissa',
     buttonText: 'Acesse aqui',
     buttonVariant: 'contained',
-    link: 'list',
   },
   {
     title: 'Leticia',
     buttonText: 'Acesse aqui',
     buttonVariant: 'contained',
-    link: 'list',
   },
   {
     title: 'Salatiel',
     buttonText: 'Acesse aqui',
     buttonVariant: 'contained',
-    link: 'list',
   },
 ];
 
 export const Home = () => {
-  const obj = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  console.log(obj);
   return (
     <>
       <GlobalStyles
@@ -76,6 +67,15 @@ export const Home = () => {
           gutterBottom
         >
           GraphQL API
+        </Typography>
+        <Typography
+          component="h1"
+          variant="h6"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Escolha a API que deseja consumir abaixo!
         </Typography>
       </Container>
       <Container maxWidth="lg" component="main">
@@ -108,14 +108,13 @@ export const Home = () => {
                 </CardContent>
                 <CardActions
                   sx={{
-                    // display: 'flex',
                     alignItems: 'center',
                     justifyItems: 'right',
                     margin: '5px 10px',
                   }}
                 >
                   <Link
-                    to={`/${tier.link}`}
+                    to={'/list'}
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     <Button
@@ -126,8 +125,8 @@ export const Home = () => {
                       onClick={() => {
                         apiUri(tier.title);
                         setTimeout(() => {
-                          navigate(0)
-                        }, 0)
+                          navigate(0);
+                        }, 0);
                       }}
                     >
                       <ArrowRightAltIcon /> {tier.buttonText}

@@ -53,8 +53,7 @@ export const apiUri = (switchName: string) => {
 };
 
 const apiJSON = localStorage.getItem('api');
-if(apiJSON)
-
+if (apiJSON)
   apiObject = {
     cache: new InMemoryCache(),
     ...JSON.parse(apiJSON),

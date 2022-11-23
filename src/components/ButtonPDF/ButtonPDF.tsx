@@ -1,5 +1,5 @@
 import { gql, useLazyQuery } from '@apollo/client';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import Button from '@mui/material/Button';
 

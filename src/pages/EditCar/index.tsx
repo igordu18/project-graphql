@@ -1,24 +1,23 @@
-import { useState } from 'react';
-import { useEditCar } from '../../hook/editCar';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-
-import { iconCar } from '../../assets/img/iconCar';
-import { MenuBar } from '../../components/MenuBar/MenuBar';
-import { Loading } from '../../components/Loading/Loading';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { useEditCar } from '../../hook/editCar';
+
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { iconCar } from '../../assets/img/iconCar';
+import { Loading } from '../../components/Loading/Loading';
+import { MenuBar } from '../../components/MenuBar/MenuBar';
 
 const theme = createTheme();
 
@@ -66,7 +65,13 @@ export function EditCar() {
           >
             <Avatar
               src={variables.avatar ? variables.avatar : iconCar}
-              sx={{ width: 120, height: 120, marginTop: 3, marginBottom: 3, borderRadius: '50%' }}
+              sx={{
+                width: 120,
+                height: 120,
+                marginTop: 3,
+                marginBottom: 3,
+                borderRadius: '50%',
+              }}
             />
             <IconButton
               color="info"

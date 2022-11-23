@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { gql, useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 
@@ -34,6 +28,12 @@ type CarInput = {
   manufactureDate: string;
 };
 
+const form: CarInput = {
+  name: '',
+  licensePlate: '',
+  manufactureDate: '',
+};
+
 const CREATE_CAR = gql`
   mutation ($car: CarInput) {
     createCar(car: $car) {
@@ -45,12 +45,6 @@ const CREATE_CAR = gql`
     }
   }
 `;
-
-const form: CarInput = {
-  name: '',
-  licensePlate: '',
-  manufactureDate: '',
-};
 
 function CreateCarProvider({ children }: Props) {
   const navigate = useNavigate();
@@ -69,7 +63,7 @@ function CreateCarProvider({ children }: Props) {
 
   const variables = {
     car,
-    loading
+    loading,
   };
   const setVariables = {
     setCar,

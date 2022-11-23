@@ -14,14 +14,6 @@ type Props = {
   children: ReactNode;
 };
 
-type CarInput = {
-  id: string;
-  name: string;
-  licensePlate: string;
-  manufactureDate: string;
-  version: number;
-};
-
 interface customHook {
   variables: any;
   setVariables: any;
@@ -32,6 +24,16 @@ const context: customHook = {
   variables: {},
   setVariables: {},
   hookFunctions: {},
+};
+
+const EditCarContext = createContext(context);
+
+type CarInput = {
+  id: string;
+  name: string;
+  licensePlate: string;
+  manufactureDate: string;
+  version: number;
 };
 
 const form: CarInput = {
@@ -50,12 +52,10 @@ type Car = {
   version: number;
 };
 
-const EditCarContext = createContext(context);
-
 function EditCarProvider({ children }: Props) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [avatar, setAvatar] = useState('')
+  const [avatar, setAvatar] = useState('');
 
   const GET_CAR = gql`
   query {

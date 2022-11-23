@@ -1,25 +1,24 @@
 import { gql, useQuery } from '@apollo/client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Typography from '@mui/material/Typography';
-
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
 
 import EditIcon from '@mui/icons-material/Edit';
 
-import { MenuBar } from '../../components/MenuBar/MenuBar';
-import { Loading } from '../../components/Loading/Loading';
 import { ButtonPDF } from '../../components/ButtonPDF/ButtonPDF';
+import { Loading } from '../../components/Loading/Loading';
+import { MenuBar } from '../../components/MenuBar/MenuBar';
 
 type Car = {
   id: string;
@@ -42,11 +41,11 @@ export const GET_CARS = gql`
 `;
 
 export function ListCar() {
-  const { data, error, loading } = useQuery<{ findAllCar: Car[] }>(GET_CARS);
-  const [loadingHome, setLoadingHome] = useState(true)
-  setTimeout(()=> {
-    setLoadingHome(false)
-  }, 100)
+  const { data, loading } = useQuery<{ findAllCar: Car[] }>(GET_CARS);
+  const [loadingHome, setLoadingHome] = useState(true);
+  setTimeout(() => {
+    setLoadingHome(false);
+  }, 100);
 
   return (
     <>
@@ -95,13 +94,12 @@ export function ListCar() {
 
                     <TableCell align="center">{car.version}</TableCell>
                     <TableCell align="center">
-                      <ButtonPDF idCar={car.id} nameCar={car.name}/>
+                      <ButtonPDF idCar={car.id} nameCar={car.name} />
                     </TableCell>
                     <TableCell align="center">
                       <Link
                         to={`/edit/${car.id}`}
                         style={{ color: 'inherit', textDecoration: 'none' }}
-
                       >
                         <Button
                           fullWidth
@@ -123,7 +121,4 @@ export function ListCar() {
       </Container>
     </>
   );
-}
-function findPDF(id: string, name: string) {
-  throw new Error('Function not implemented.');
 }

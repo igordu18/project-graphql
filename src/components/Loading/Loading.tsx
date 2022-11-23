@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
 type ObjectBoolean = {
-  isLoading: true | false
-}
+  isLoading: true | false;
+};
 
 export function Loading({ isLoading }: ObjectBoolean) {
   if (!isLoading) return <></>;
