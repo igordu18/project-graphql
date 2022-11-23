@@ -233,6 +233,9 @@ export function EditCar() {
                   onClick={(event) => {
                     event.preventDefault();
                     hookFunctions.navigate(-1);
+                    setTimeout(() => {
+                      hookFunctions.navigate(0);
+                    }, 10);
                   }}
                 >
                   Voltar

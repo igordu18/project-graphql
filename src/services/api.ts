@@ -25,7 +25,7 @@ export const apiUri = (switchName: string) => {
       return localStorage.setItem(
         'api',
         JSON.stringify({
-          uri: 'https://igraphql-api-carros.herokuapp.com/graphql',
+          uri: 'https://graphql-fiore.herokuapp.com/',
         }),
       );
     case 'Juan':
@@ -43,12 +43,7 @@ export const apiUri = (switchName: string) => {
         }),
       );
     default:
-      return localStorage.setItem(
-        'api',
-        JSON.stringify({
-          uri: 'https://igraphql-api-carros.herokuapp.com/graphql',
-        }),
-      );
+      return apiObject;
   }
 };
 

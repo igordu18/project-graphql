@@ -37,7 +37,7 @@ export function CreateCar() {
       <Loading isLoading={variables.loading} />
       <ToastContainer
         position="bottom-right"
-        autoClose={2000}
+        autoClose={1500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -139,6 +139,11 @@ export function CreateCar() {
                   color="info"
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
+                  onClick={() => {
+                    setTimeout(() => {
+                      hookFunctions.navigate(-1);
+                    }, 2100);
+                  }}
                 >
                   Criar
                 </Button>
