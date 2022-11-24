@@ -27,11 +27,9 @@ Projeto desenvolvido a fins de estudo do framework GraphQL utilizando o ecossist
 
 ### Pré-requisitos
 
-<p align="justify">
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
-</p>
 
 #### Siga as seguintes instruções para utilizar o projeto no seu computador:
 
@@ -51,9 +49,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 #### Alternativa
 
-<p align="justify">
 Você também pode dar uma olhada no sistema funcionando clicando [aqui](https://trainee-graphql.vercel.app/).
-</p>
 
 ## Documentação
 
